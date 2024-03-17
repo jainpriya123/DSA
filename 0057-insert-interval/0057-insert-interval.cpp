@@ -8,12 +8,7 @@ public:
             return intervals;
         }
         int flag=0;
-        if(intervals[0][0] > newInterval[1]){
-                intervals.insert(intervals.begin(), newInterval);
-            flag=1;
-        }
-        else{
-            for(int i=1;i<n;i++){
+         for(int i=0;i<n;i++){
             cout<<"intervals[i][0]  "<<intervals[i][0]<< "  newInterval[1]"<<newInterval[1]<<endl;
             if (intervals[i][0] > newInterval[1]){
                 intervals.insert(intervals.begin() + i, newInterval);
@@ -27,7 +22,26 @@ public:
                 break;
             } 
         }
-        }
+        // if(intervals[0][0] > newInterval[1]){
+        //         intervals.insert(intervals.begin(), newInterval);
+        //     flag=1;
+        // }
+        // else{
+        //     for(int i=1;i<n;i++){
+        //     cout<<"intervals[i][0]  "<<intervals[i][0]<< "  newInterval[1]"<<newInterval[1]<<endl;
+        //     if (intervals[i][0] > newInterval[1]){
+        //         intervals.insert(intervals.begin() + i, newInterval);
+        //         flag=1;
+        //         break;
+        //     }
+        //     else if(intervals[i][1]>=newInterval[0]){
+        //         intervals[i][0]= min(intervals[i][0],newInterval[0]);
+        //         intervals[i][1]= max(intervals[i][1],newInterval[1]);
+        //         flag=1;
+        //         break;
+        //     } 
+        // }
+        // }
         
         cout<<"flag  "<<flag<<endl;
         if(flag==0){
