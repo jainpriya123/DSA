@@ -2,7 +2,7 @@ class Solution {
 public:
     int solve(vector<int>& arr, int num, int n, vector<vector<int>>&dp){
         
-        if(n==0) return INT_MAX-1;
+        // if(n==0) return INT_MAX-1;
         if(num==0){
             return dp[n][num]= 0;
         } 
