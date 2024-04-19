@@ -71,3 +71,57 @@ public:
         return ans;
     }
 };
+
+
+
+
+
+
+// class Solution {
+// public:
+//     int dx[4] = {0,1,0,-1};
+//     int dy[4] = {1,0,-1,0};
+    
+//     bool isvalid(int i, int j, vector<vector<char>>& grid, vector<vector<int>>&vis){
+//         if(i<0 || i>=grid.size() || j<0 || j>=grid[0].size() || vis[i][j]==1 || grid[i][j]=='0') return false;
+//         return true;
+//     }
+    
+    
+//     int numIslands(vector<vector<char>>& grid) {
+//         int n=grid.size();
+//         int m=grid[0].size();
+//         int count=0;
+//         vector<vector<int>>vis(n,vector<int>(m,0));
+//         queue<pair<int,int>>q;
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+                
+//                 if(vis[i][j]==0 && grid[i][j]=='1'){
+//                     q.push({i,j});
+//                     vis[i][j]=1;
+//                     while(!q.empty()){
+//                         int indi=q.front().first;
+//                         int indj=q.front().second;
+                        
+//                         q.pop();
+                        
+//                         for(int k=0;k<4;k++){
+                            
+//                             if(isvalid(indi+dx[k],indj+dy[k],grid,vis)){
+//                                 q.push({indi+dx[k],indj+dy[k]});
+//                                 vis[indi+dx[k]][indj+dy[k]]=1;
+//                             }
+//                         }
+//                     }
+                    
+//                     count++;
+                    
+//                 }
+//             }
+//         }
+        
+//         return count;
+        
+//     }
+// };
