@@ -8,8 +8,8 @@ public:
         if(n==1) return x;
         double even,odd;
         if(n%2 !=0) {
-           odd= myPow(x,(n-1)/2);
-           return odd*odd*x;
+           odd= myPow(x,(n-1));
+           return odd*x;
         } 
         else{
             even= myPow(x,n/2);
