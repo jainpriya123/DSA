@@ -1,3 +1,5 @@
+//approach similar to array divisible by k
+
 class Solution {
 public:
     bool checkSubarraySum(vector<int>& arr, int k) {
@@ -15,14 +17,8 @@ public:
             else{
                 mp[count]=i;
             }
-            // cout<<count<<"  ";
-            
+           
         }
-        
-        // cout<<endl;
-        // for(auto x: mp){
-        //     if(x.second>1) return true;
-        // }
         
         return false;
     }
