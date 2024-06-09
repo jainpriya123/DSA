@@ -1,3 +1,5 @@
+// refer knowledge center yt video..
+
 class Solution {
 public:
     int subarraysDivByK(vector<int>& arr, int k) {
