@@ -1,44 +1,84 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& arr) {
-        
         int n=arr.size();
         sort(arr.begin(),arr.end());
         vector<vector<int>>ans;
-        
+
         for(int i=0;i<n;i++){
-            
-            for(int j=i+1;j<n;j++){
-                int sum= 0-(arr[i]+arr[j]);
-                int a=j+1;
-                int b=n-1;
-                vector<int>temp;
-                while(a<=b){
-                    int mid= a+(b-a)/2;
-                    if(arr[mid]==sum){
-                       temp.push_back(arr[i]);
-                        temp.push_back(arr[j]);
-                        temp.push_back(arr[mid]);
-                        ans.push_back(temp);
-                        break; 
+            int sum= -arr[i];
+
+            int j=i+1;
+            int k=n-1;
+
+            while(j<k){
+                if(arr[j]+arr[k]==sum){
+                    vector<int>temp;
+                    temp.push_back(arr[i]);
+                    temp.push_back(arr[j]);
+                    temp.push_back(arr[k]);
+                    ans.push_back(temp);
+                    while(j+1<n && arr[j+1] == arr[j]){
+                        j++;
                     }
-                    else if(arr[mid]<sum){
-                        a=mid+1;
+                    while(k-1>=0 && arr[k-1] == arr[k]){
+                        k--;
                     }
-                    else{
-                        b=mid-1;
-                    }
-                }
-                while(j+1<n && arr[j+1] == arr[j]){
                     j++;
+                    k--;
+                }
+                else if(arr[j]+arr[k]<sum){
+                    j++;
+                }
+                else{
+                    k--;
                 }
             }
             while(i+1<n && arr[i+1] == arr[i]){
-                    i++;
+                i++;
             }
+
         }
-        
+
         return ans;
+
+        // int n=arr.size();
+        // sort(arr.begin(),arr.end());
+        // vector<vector<int>>ans;
+        
+        // for(int i=0;i<n;i++){
+            
+        //     for(int j=i+1;j<n;j++){
+        //         int sum= 0-(arr[i]+arr[j]);
+        //         int a=j+1;
+        //         int b=n-1;
+        //         vector<int>temp;
+        //         while(a<=b){
+        //             int mid= a+(b-a)/2;
+        //             if(arr[mid]==sum){
+        //                temp.push_back(arr[i]);
+        //                 temp.push_back(arr[j]);
+        //                 temp.push_back(arr[mid]);
+        //                 ans.push_back(temp);
+        //                 break; 
+        //             }
+        //             else if(arr[mid]<sum){
+        //                 a=mid+1;
+        //             }
+        //             else{
+        //                 b=mid-1;
+        //             }
+        //         }
+        //         while(j+1<n && arr[j+1] == arr[j]){
+        //             j++;
+        //         }
+        //     }
+        //     while(i+1<n && arr[i+1] == arr[i]){
+        //             i++;
+        //     }
+        // }
+        
+        // return ans;
         
 //         int n=arr.size();
 //         sort(arr.begin(),arr.end());
